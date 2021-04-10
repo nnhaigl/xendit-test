@@ -103,15 +103,15 @@ export class Controller {
       const body = await func.apply(null, transformedArgs)
       req.res.locals.resBody = body
       if (!body) return res.status(HTTP_STATUS.OK).send(null)
-      const resHeaders = this.getResHeaders(
-        metadata.paramsMetadata,
-        transformedArgs,
-      )
+      // const resHeaders = this.getResHeaders(
+      //   metadata.paramsMetadata,
+      //   transformedArgs,
+      // )
       let status = HTTP_STATUS.OK
       let headers = this.defaultHeaders
       if (metadata) {
         const { header, statusCode } = metadata
-        headers = Object.assign({}, this.defaultHeaders, header, resHeaders)
+        headers = Object.assign({}, this.defaultHeaders, header)
         if (statusCode) {
           status = statusCode
         }
@@ -136,15 +136,15 @@ export class Controller {
     )
   }
 
-  private getResHeaders(
-    paramsMetadata: ParamsMetadata,
-    transformedArgs: any[],
-  ) {
-    const resHeaderMetadata = Object.values(paramsMetadata).find(
-      value => value && value.paramtype === FunctionParamtypes.RESPONSE_HEADER,
-    )
-    return resHeaderMetadata ? transformedArgs[resHeaderMetadata.index] : {}
-  }
+  // private getResHeaders(
+  //   paramsMetadata: ParamsMetadata,
+  //   transformedArgs: any[],
+  // ) {
+  //   const resHeaderMetadata = Object.values(paramsMetadata).find(
+  //     value => value && value.paramtype === FunctionParamtypes.RESPONSE_HEADER,
+  //   )
+  //   return resHeaderMetadata ? transformedArgs[resHeaderMetadata.index] : {}
+  // }
 
   private async transform(
     metadata: FunctionMetadata,

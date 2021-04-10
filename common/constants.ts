@@ -1,3 +1,4 @@
+require('dotenv').config()
 export const HTTP_CODE_METADATA = 'HTTP_CODE_METADATA'
 export const HEADERS_METADATA = 'HEADERS_METADATA'
 export const ROUTE_ARGS_METADATA = 'ROUTE_ARGS_METADATA'
@@ -113,3 +114,11 @@ export const WHITE_LIST_HEADERS = [
 export const WHITE_LIST_BODY = ['errors']
 
 export const CONTENT_LENGTH_HEADER = 'content-length'
+
+export const MARVEL_URL = "http://gateway.marvel.com"
+export const PUBLIC_KEY = process.env.PUBLIC_KEY
+export const PRIVATE_KEY = process.env.PRIVATE_KEY
+
+export const CACHE_CONFIG = {
+  TTL: Number.parseInt(process.env.CACHE_TTL || "60")
+}
