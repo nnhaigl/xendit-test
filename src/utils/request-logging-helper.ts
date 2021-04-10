@@ -64,7 +64,7 @@ export class RequestLoggingHelper {
     const statusCode = res ? res.statusCode : null
     const resBody = res ? res.body : null
     const searchParams =
-      reqOption && reqOption.searchParams ? reqOption.searchParams : null
+      reqOption && reqOption.params ? reqOption.params : null
     const logInfo = {
       ...{
         searchParams,
