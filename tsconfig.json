@@ -9,7 +9,10 @@
     "target": "es2017",
     "sourceMap": false,
     "incremental": true,
-    "preserveSymlinks": true
+    "preserveSymlinks": true,
+    "lib": ["es2019"],
+    "skipLibCheck": true,                 
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["../node_modules", "./**/*.spec.ts", "dist"]
 }
