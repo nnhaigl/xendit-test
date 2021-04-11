@@ -6,6 +6,7 @@ Please create `.env` file as config file, it will be consists environment variab
 - PUBLIC_KEY : public key of marvel api
 - PRIVATE_KEY : private key of marvel api
 - CACHE_TTL : time to live of local cache
+- PORT : port using to export api
 
 Or you can follow `.env.example`
 ### Unit test

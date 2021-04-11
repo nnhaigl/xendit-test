@@ -3,7 +3,7 @@ import App from './src/app';
 require('dotenv').config()
 
 async function active() {
-  const port = +process.env.PORT || 3000
+  const port = +process.env.PORT || 8080
   const app = new App(
     [
       CharacterController
