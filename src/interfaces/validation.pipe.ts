@@ -6,9 +6,8 @@ import {
 } from '../interfaces/pipe-transform.interface'
 import { BadRequestException } from '../exception/bad-excception'
 import { ValidationError } from 'class-validator'
-import { loadPackage } from '../utils'
+import { isNil, loadPackage } from '../../utils'
 import { ValidationPipeOptions } from '../interfaces'
-import { isNil } from '@distribution/core'
 
 let classValidator: any = {}
 let classTransformer: any = {}

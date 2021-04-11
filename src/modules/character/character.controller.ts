@@ -1,10 +1,6 @@
 import { LoggerService, RequestService } from '../../services';
 import { Get, Param } from '../../decorators';
-import { HTTP_STATUS, MARVEL_URL } from '../../../common';
-import { NoContentError } from '../../errors';
 import { CharacterResDto } from './dtos/character.res.dto';
-import { TransformHelper } from '../../utils';
-import { GetCharacterResDto } from './dtos/get-character.res.dto';
 import { CharacterService } from './character.service';
 import cacheLocal from '../../utils/cach-local'
 
