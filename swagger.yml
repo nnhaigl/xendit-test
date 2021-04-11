@@ -1,0 +1,70 @@
+swagger: "2.0"
+info:
+  description: "Marvel API"
+  version: "1.0.0"
+  title: "Swagger Marvel API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "nnhaigl@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:3000"
+schemes:
+- "http"
+paths:
+  /api/v1/characters:
+    get:
+      tags:
+      - "Character"
+      summary: "Get all characters id"
+      description: ""
+      operationId: "getCharacters"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "500":
+          description: "internal error or can not call to marvel api"
+        "200":
+          description: "successful"
+          schema:
+            type: "array"
+            items:
+              type: integer
+  /api/v1/characters/:id:
+    get:
+      tags:
+      - "Character"
+      summary: "Get character by id"
+      description: ""
+      operationId: "getCharacter"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "500":
+          description: "internal error or can not call to marvel api"
+        "200":
+          description: "successful"
+          schema:
+            $ref: "#/definitions/character"
+definitions:
+  character:
+    type: "object"
+    properties:
+      id:
+        type: "number"
+        default: "1010363"
+      name:
+        type: "string"
+        default: "Logan"
+      description:
+        type: "string"
+        default: "risus quis diam luctus lobortis. Class aptent taciti sociosqu a"
+  
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
